@@ -1,6 +1,6 @@
 
 .items-container {
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
     display: grid;
     /* grid-template-rows: 1fr 1fr 1fr; */
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
