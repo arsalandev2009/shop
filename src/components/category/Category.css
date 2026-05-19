@@ -1,0 +1,15 @@
+.categorycontainer{
+    z-index: 999;    
+  
+}
+.categorylink{
+    text-decoration: none;
+    color: black;
+  /* border:1px solid black; */
+width: 100%;
+  transition: all 0.2s;
+
+}
+.categorylink:hover{
+    transform: scale(1.01);
+}
