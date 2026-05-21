@@ -1,7 +1,61 @@
 import facewash from '../assets/facewash.png'
 import facewash2 from '../assets/facewash2.png'
 
-const productsdata = [
+export const categoriesdata =[
+  {
+    id: 1,
+desc:"lorem arsalan shabbir",
+    name: "Face Wash",
+    image: facewash
+  },
+  {
+    id: 2,
+    name: "Skin Care",
+    desc:"lorem arsalan shabbir",
+    image: facewash2
+
+  },
+   {
+    id: 3,
+desc:"lorem arsalan shabbir",
+    name: "Face Wash",
+    image: facewash
+  },
+  {
+    id: 4,
+    name: "Skin Care",
+    desc:"lorem arsalan shabbir",
+    image: facewash2
+
+  },
+    {
+    id: 5,
+desc:"lorem arsalan shabbir",
+    name: "Face Wash",
+    image: facewash
+  },
+  {
+    id: 6,
+    name: "Skin Care",
+    desc:"lorem arsalan shabbir",
+    image: facewash2
+
+  },
+   {
+    id: 7,
+desc:"lorem arsalan shabbir",
+    name: "Face Wash",
+    image: facewash
+  },
+  {
+    id: 8,
+    name: "Skin Care",
+    desc:"lorem arsalan shabbir",
+    image: facewash2
+
+  }
+]
+export const productsdata = [
   {
     id: 1,
     name: "Face Wash",
@@ -204,4 +258,3 @@ const productsdata = [
   }
 ];
 
-export default productsdata;

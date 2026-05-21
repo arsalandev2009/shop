@@ -1,46 +1,61 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useState } from "react";
 import heartIcon from '../../assets/favourite-icon.png'
-import productsdata from '../../data/index'
+import Categorymenu from '../../assets/menu.png';
+import Productscard from '../products/Productscard'
+import { productsdata } from '../../data/index'
 import Header from '../header/Header'
 import Footer from '../footer/Footer'
-import Category from '../category/Category'
+// import Category from '../category/Category'
 import './Allproducts.css'
 
 function Allproducts() {
+   const [hideandshow, setHideandshow] = useState(false);
+    
+      const toggle = () => {
+        setHideandshow(!hideandshow);
+    
+        setTimeout(() => {
+          setHideandshow(false);
+        }, 10000);
+      };
   return (
     <>
 <Header/>
 
 
-    <Category/>
-    <div className="allproducts-items-container" id="items-container" style={{ position: "relative" }}>
-      {productsdata.map((item) => (
-        <Link className="boxes" key={item.id}>
-          <div className="image">
-            {/* <div className="favourite">
-              <img src={heartIcon} alt="" width="20px" />
-            </div> */}
+  <div className='allproducts-main-cont'>
 
-            <img src={item.image} alt="" width="100%"/>
-          </div>
+      <div className="allproducts-categorycontainer">
+      <button className="categorybtn" onClick={toggle}>
+        <img
+          src={Categorymenu}
+          alt=""
+          className={hideandshow ? "rotate" : ""}
+            
+        />
+      </button>
 
-          <div className="title">
-            <p>{item.name}</p>
-          </div>
-
-          <div className="description">
-            <p>{item.desc}</p>
-          </div>
-        <div className="price">
-          <p>Rs: {item.saleprice}</p>
-          <del><p>{item.price}</p></del>
+      {hideandshow && (
+        <div className="categorymenu">
+          <Link className="categorylink" to="/">Makeup</Link>
+          <Link className="categorylink" to="/">Hair care</Link>
+          <Link className="categorylink" to="/">Skin care</Link>
+          <Link className="categorylink" to="/">Fragrance</Link>
+          <Link className="categorylink" to="/">Personal care</Link>
         </div>
+      )}
 
-          </Link>
-      ))}
 
-    </div>
+      </div>
+
+      <div className="allproducts-items-container" id="items-container" style={{ position: "relative" }}>
+      <Productscard />
+
+      </div>
+
+  </div>
    
 <Footer/>
 </>    

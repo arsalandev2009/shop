@@ -40,44 +40,33 @@
 
 
 
-
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import Categorymenu from '../../assets/menu.png';
-import './Category.css';
-
-function Category() {
-  const [hideandshow, setHideandshow] = useState(false);
-
-  const toggle = () => {
-    setHideandshow(!hideandshow);
-
-    setTimeout(() => {
-      setHideandshow(false);
-    }, 10000);
-  };
-
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { categoriesdata } from '../../data/index'
+import './Categories.css'
+function Categories() {
   return (
-    <div className="categorycontainer">
-      <button className="categorybtn" onClick={toggle}>
-        <img
-          src={Categorymenu}
-          alt=""
-          className={hideandshow ? "rotate" : ""}
-        />
-      </button>
-
-      {hideandshow && (
-        <div className="categorymenu">
-          <Link className="categorylink" to="/">Makeup</Link>
-          <Link className="categorylink" to="/">Hair care</Link>
-          <Link className="categorylink" to="/">Skin care</Link>
-          <Link className="categorylink" to="/">Fragrance</Link>
-          <Link className="categorylink" to="/">Personal care</Link>
-        </div>
-      )}
+    <div className='categories-main-container'>
+       <div className="categories-container" id="items-container">
+         {categoriesdata.map((item) => (
+           <Link className="boxes" key={item.id}>
+             <div className="image">
+               <img src={item.image} alt="" width="100%"/>
+             </div>
+   
+             <div className="title">
+               <p>{item.name}</p>
+             </div>
+   
+             <div className="description">
+               <p>{item.desc}</p>
+             </div>
+             </Link>
+         ))}
+   
+       </div>
     </div>
-  );
+  )
 }
 
-export default Category;
+export default Categories
