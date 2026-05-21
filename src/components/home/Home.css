@@ -1,5 +1,8 @@
 .home-container{
     display: flex;
-    z-index: auto;
-    flex-direction: column;
+    /* z-index: auto; */
+    align-items: start;
+    /* flex-direction: column; */
+    
 }
+

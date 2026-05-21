@@ -1,12 +1,14 @@
 import React from 'react'
-import Products from '../products/Products'
+import Homeproducts from '../products/Homeproducts'
 import Category from '../category/Category'
 import './Home.css'
 function Home() {
   return (
     <div className='home-container'>
         <Category />
-        <Products />
+        <Homeproducts />
+
+      
     
     </div>
   )

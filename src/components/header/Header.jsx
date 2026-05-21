@@ -5,6 +5,7 @@ import logo from '../../assets/logo.png'
 import shoppingCart from '../../assets/shopping-cart.png'
 import cancel from '../../assets/cancel.png'
 import heartIcon from '../../assets/favourite-icon.png'
+import searchIcon from '../../assets/searchicon.png'
 import './Header.css'
 
 function Header() {
@@ -28,7 +29,7 @@ setTimeout(()=>{
             </div>
            )}
             <div className="header-child">
-                <div>
+                <div className='logocont'>
                     <Link to="/home"><img src={logo} className="logo" alt="" width="80px"/></Link>
                 </div>
 
@@ -38,14 +39,14 @@ setTimeout(()=>{
                     <li><Link to="/contactus">Contact us</Link></li>
                 </ul>
                <div className='cart-favourite'>
+                <div className='inputbox'><img src={searchIcon} alt="" width="20px"/><input type="search" placeholder='Search /' /> </div>
+                <Link to='/favourite' className="cart-icon"> 
+                    <img src={heartIcon} alt="" className="cart-img" width="30px" />
+                </Link> 
                  <Link to='/cart' className="cart-icon"> 
                     <img src={shoppingCart} alt="" className="cart-img" width="30px" />
                     
                 </Link>    
-                <Link to='/favourite' className="cart-icon"> 
-                    <img src={heartIcon} alt="" className="cart-img" width="30px" />
-                    
-                </Link> 
                 </div>   
             </div>
         </div>
