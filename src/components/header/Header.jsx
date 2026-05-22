@@ -6,12 +6,20 @@ import shoppingCart from '../../assets/shopping-cart.png'
 import cancel from '../../assets/cancel.png'
 import heartIcon from '../../assets/favourite-icon.png'
 import searchIcon from '../../assets/searchicon.png'
+import nameIcon from '../../assets/name-icon.png'
 import './Header.css'
 
 function Header() {
 
-const [hide, setHide] = useState(true);
+const [account,setAccount]=useState(false);
 
+let dropdown =()=>{
+    setAccount(!account)
+    setTimeout(()=>{
+    setAccount(false)
+},5000)
+}
+const [hide, setHide] = useState(true);
 let disable = () => {
     setHide(false)
 setTimeout(()=>{
@@ -47,6 +55,39 @@ setTimeout(()=>{
                     <img src={shoppingCart} alt="" className="cart-img" width="30px" />
                     
                 </Link>    
+                <div style={{  
+                    position: "relative",
+                    display: "inline-block"}}>
+                    <p className="account-icon" onClick={dropdown}> 
+                    <img src={nameIcon} alt="" className="cart-img" width="30px" />                    
+                    </p>    
+                {account && (
+                    <div style={{
+        position: "absolute",
+        top: "60px",
+        right: "0",
+        background: "white",
+        padding: "10px",
+        width:"200px",
+        display:"grid",
+        gap:"10px",
+        borderRadius:"10px",
+        
+        border: "1px solid #ddd",
+        boxShadow: "0px 5px 15px rgba(0,0,0,0.1)",
+        zIndex: 999,
+        color:"black"
+      }}>
+                    <Link style={{textDecoration:"none",color:"black"}}>My account</Link>
+                    <hr />
+                    <Link style={{textDecoration:"none",color:"black"}}>My account</Link>
+                    <Link style={{textDecoration:"none",color:"black"}}>My account</Link>
+                    <Link style={{textDecoration:"none",color:"black"}}>My account</Link>
+                    <Link style={{textDecoration:"none",color:"black"}}>My account</Link>
+                    <Link style={{textDecoration:"none",color:"black"}}>My account</Link>
+                    </div>
+                )}
+                </div>
                 </div>   
             </div>
         </div>

@@ -10,6 +10,8 @@ import Otp from './components/otp/Otp'
 import Setnewpassword from './components/setnewpassword/Setnewpassword'
 import Allproducts from './components/allproducts/Allproducts'
 import Home from './components/home/Home'
+import Details from './components/details/Details'
+import Youraccount from './components/youraccount/Youraccount'
 
 
 
@@ -33,7 +35,9 @@ function App() {
   <Route path='/otp' element={<Otp />} />
   <Route path='/setnewpassword' element={<Setnewpassword />} />
   <Route path="/products" element={<Allproducts/>}/>
-</Routes>
+  <Route path="/details/:id" element={<Details />}/>
+  <Route path='/you' element={<Youraccount/>}/>
+  </Routes>
 
 </BrowserRouter>
 

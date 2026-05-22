@@ -35,6 +35,7 @@ function Homeroducts({ids}) {
       >
         {showProducts.map((item) => (
           <Link
+          to={`/details/${item.id}`}
             key={item.id}
             style={{
               width: '220px',

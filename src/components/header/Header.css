@@ -241,7 +241,28 @@ transform: scaleX(1.05);
 .cart-img{
     filter: brightness(0) invert(1);
 }
+.account-icon{
+    /* background: linear-gradient(135deg, #ff4fa3, #ff7ac3); */
+    background-color: #ff3886;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 15px rgba(255, 79, 163, 0.3);
+    transition: 0.3s ease;
+}
 
+.account-icon:hover{
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(255, 79, 163, 0.4);
+}
+
+.account-img{
+    filter: brightness(0) invert(1);
+}
 /* MOBILE */
 @media (max-width: 768px){
     .header-child{
