@@ -37,6 +37,7 @@ function App() {
   <Route path="/products" element={<Allproducts/>}/>
   <Route path="/details/:id" element={<Details />}/>
   <Route path='/you' element={<Youraccount/>}/>
+  <Route path='/contactus' element={<Contactus />}/>
   </Routes>
 
 </BrowserRouter>

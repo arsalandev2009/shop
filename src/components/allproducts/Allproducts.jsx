@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useState } from "react";
-import heartIcon from '../../assets/favourite-icon.png'
+import heartIcon from '../../assets/wishlist.png'
 import Categorymenu from '../../assets/menu.png';
+import dropdown from '../../assets/dropdown.png';
 import Productscard from '../products/Productscard'
 import { productsdata } from '../../data/index'
 import Header from '../header/Header'
@@ -25,14 +26,21 @@ function Allproducts() {
 <Header/>
 
 
-  <div className='allproducts-main-cont'>
+  <div className='allproducts-main-cont' style={{ marginTop:'120px'}}>
 
       <div className="allproducts-categorycontainer">
       <button className="categorybtn" onClick={toggle}>
+        <p>Categories</p>
         <img
-          src={Categorymenu}
+          src={dropdown}
           alt=""
-          className={hideandshow ? "rotate" : ""}
+          // className={hideandshow ? "rotate" : ""}
+          style={{
+              transition: 'transform 0.3s ease',
+
+              transform: hideandshow ? 'rotate(180deg)' : 'rotate(0deg)',
+
+          }}
             
         />
       </button>
@@ -50,7 +58,8 @@ function Allproducts() {
 
       </div>
 
-      <div className="allproducts-items-container" id="items-container" style={{ position: "relative" }}>
+      <div style={{ position: "relative" ,width:'87vw',padding:'0px', display:'flex', justifySelf:'end' }}>
+
       <Productscard />
 
       </div>

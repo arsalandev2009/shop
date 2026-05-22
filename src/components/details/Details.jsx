@@ -1,10 +1,12 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { productsdata } from "../../data/index";
+import { Link } from "react-router-dom";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import Products from "../products/Productscard";
-
+import wishlist from "../../assets/wishlist.png";
+import share from "../../assets/share.png";
 function Details() {
   const { id } = useParams();
 
@@ -17,14 +19,17 @@ function Details() {
     // saleprice: 1700,
     <div style={{ display: "grid", gap: "50px", fontFamily: "sans-serif" }}>
       <Header />
-      <div style={{
-            display: "flex",
-            // justifyContent: "center",
-            // alignItems:"center",
-            gap: "50px",
-            flexDirection:"column"
-          }} >
-
+      <div
+        style={{
+          display: "flex",
+          // justifyContent: "center",
+          // alignItems:"center",
+          
+          gap: "50px",
+          flexDirection: "column",
+           marginTop:'150px'
+        }}
+      >
         <div
           style={{
             display: "flex",
@@ -62,7 +67,9 @@ function Details() {
               </p>
             </div>
             <div>
-              <p style={{ color: "black", fontSize: "20px" }}>
+              <p
+                style={{ color: "black", fontSize: "20px", textAlign: "start" }}
+              >
                 {singleProduct.fulldesc}
               </p>
             </div>
@@ -76,27 +83,64 @@ function Details() {
                 Rs: {singleProduct.saleprice}
               </del>
             </div>
-            <button
+            <div
               style={{
-                padding: "10px 20px",
-                fontSize: "20px",
-                cursor: "pointer",
-                backgroundColor: "#ff6eba",
-                color: "#000000",
-                border: "none",
-                borderRadius: "10px",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                width: "100%",
               }}
             >
-              Add to cart{" "}
-            </button>
+              <button
+                style={{
+                  padding: "10px 20px",
+                  fontSize: "20px",
+                  cursor: "pointer",
+                  backgroundColor: "#ff6eba",
+                  color: "#000000",
+                  border: "none",
+                  borderRadius: "10px",
+                }}
+              >
+                Add to cart{" "}
+              </button>
+
+              <div style={{ display: "flex", gap: "20px" }}>
+                
+                  <Link>
+                  <img src={share} alt="" width="25px" />
+                  </Link>
+               
+                <Link>
+                  <img src={wishlist} alt="" width="25px" />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="suggestions" style={{width:"80%",display:"flex",flexDirection:"column",marginTop:"100px",alignItems:"start", alignSelf:"center"}}>
-          <h2 style={{color:"black",padding:"0px 20px",marginBottom:"-50px"}}>Related products</h2>
+        <div
+          className="suggestions"
+          style={{
+            width: "80%",
+            display: "flex",
+            flexDirection: "column",
+            marginTop: "100px",
+            alignItems: "start",
+            alignSelf: "center",
+          }}
+        >
+          <h2
+            style={{
+              color: "black",
+              padding: "0px 20px",
+              marginBottom: "-50px",
+            }}
+          >
+            Related products
+          </h2>
           <Products ids={[2, 1, 5, 7, 9, 10, 15, 20]} />
         </div>
-
       </div>
       <Footer />
     </div>

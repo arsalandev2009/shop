@@ -1,15 +1,12 @@
-.allproducts-main-cont{
-    display: flex;
-    justify-content: space-between;
-
-}
  .allproducts-categorycontainer {
     /* background-color: aqua; */
   margin: 0;
-  width: 40%;
+  width: 15vw;
   padding: 20px;
   display: flex;
   flex-direction: column;
+  position: absolute;
+  z-index: 999;
   align-items: flex-start;
   gap: 8px;
 }
@@ -19,6 +16,11 @@
   width: fit-content;
   border: none;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  gap: 5px;
+  color: white;
   padding: 6px 14px;
   background: linear-gradient(135deg, #ff60b0, #ff2d7a);
   color: black;
@@ -28,7 +30,7 @@
 }
 
 .categorybtn:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .categorybtn img {
@@ -36,9 +38,6 @@
   transition: transform 0.3s ease;
 }
 
-.rotate {
-  transform: rotate(90deg);
-}
 
 /* Menu Box */
 .categorymenu {

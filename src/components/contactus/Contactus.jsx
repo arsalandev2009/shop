@@ -1,9 +1,12 @@
 import React from 'react'
+import Header from '../header/Header'
 
 function Contactus() {
   return (
-    <div style={{color:"white"}}>
-<div>aa</div>
+    <>
+    <Header/>
+    <div style={{color:"black" , marginTop:'150px'}}>
+<div>ajka</div>
 <div>aa</div>
 <div>aa</div>
 <div>aa</div>
@@ -87,6 +90,7 @@ function Contactus() {
 <div>aa</div>
 <div>aa</div>
     </div>
+    </>
   )
 }
 

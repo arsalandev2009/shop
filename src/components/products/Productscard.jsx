@@ -16,7 +16,8 @@ function Homeroducts({ids}) {
         margin: '50px auto 50px 0px',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
+        // backgroundColor:"green",
+        width:"100%"
       }}
     >
 
@@ -27,9 +28,10 @@ function Homeroducts({ids}) {
           flexWrap: 'wrap',
           gap: '20px',
           margin: '0px 0px 20px 0px',
+        // backgroundColor:"red",
           padding: '20px',
           width: '100%',
-          justifyContent: 'flex-start',
+          justifyContent: 'start',
           boxSizing: 'border-box',
         }}
       >

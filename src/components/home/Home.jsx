@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import Categorymenu from '../../assets/menu.png';
+import dropdown from '../../assets/dropdown.png';
 import Categories from '../category/Categories'
 import Products from '../products/Productscard'
 
@@ -18,16 +19,14 @@ const [hover, setHover] =useState(false);
   };
 
   return (
-    <div
-      style={{
-        display: 'flex',
-      }}
-    >
+    <div style={{ marginTop:'120px'}}>
 
       <div
         style={{
           margin: 0,
-          width: '15%',
+          position:'absolute',
+          zIndex:'999',
+          width: '15vw',
           padding: '20px',
           display: 'flex',
           flexDirection: 'column',
@@ -38,6 +37,8 @@ const [hover, setHover] =useState(false);
 
         <button
           onClick={toggle}
+           onMouseEnter={()=>setHover(true)}
+          onMouseLeave={()=>setHover(false)}
           style={{
             width: 'fit-content',
             border: 'none',
@@ -47,16 +48,22 @@ const [hover, setHover] =useState(false);
             color: 'black',
             boxShadow: '0px 2px 8px rgba(0,0,0,0.2)',
             borderRadius: '6px',
+            display:'flex',
+            gap:'5px',
+            alignItems:'center',
+            fontSize:'18px',
             transition: '0.2s ease',
+            transform: hover? 'scale(1.02)':'scale(1)'
           }}
         >
+          <p>Categories</p>
           <img
-            src={Categorymenu}
+            src={dropdown}
             alt=""
             style={{
               width: '30px',
               transition: 'transform 0.3s ease',
-              transform: hideandshow ? 'rotate(90deg)' : 'rotate(0deg)',
+              transform: hideandshow ? 'rotate(180deg)' : 'rotate(0deg)',
             }}
           />
         </button>
@@ -167,13 +174,22 @@ const [hover, setHover] =useState(false);
         style={{
           margin: '10px 0px 100px 0px',
           display: 'flex',
+          // backgroundColor:'aqua',
+          position:'relative',
+          width:"87vw",   
           flexDirection: 'column',
+          justifySelf:'end',  // ***********//
           alignItems: 'center',
         }}
       >
 
         <div style={{  
-           margin:"50px 0px 0px 0px"
+          display:"flex",
+          alignSelf:'start',
+          flexDirection:'column',
+           margin:"50px 0px 0px 0px",
+           width:'100%'
+          
         }}>
          
           <p style={{
@@ -183,7 +199,7 @@ const [hover, setHover] =useState(false);
             fontWeight:"500", 
             margin:"0px 0px -30px 20px"
             }}>Hot items</p>
-          <Products ids={[2,1,5,7,9,10,15,20]} />
+          <Products ids={[9,10,15,20]} />
              <Link
           to="/products"
           onMouseEnter={()=>setHover(true)}
@@ -195,6 +211,8 @@ const [hover, setHover] =useState(false);
             padding: '5px 30px',
             fontSize: '20px',
             transition:"all 0.2s",
+            width:'fit-content',
+            alignSelf:'center',
             display:"inline-block",
             boxShadow: '0px 0px 5px 0px rgb(0,0,0)',  
             transform:hover ? "scale(1.1)": "scale(1)"
