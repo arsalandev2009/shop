@@ -8,23 +8,24 @@ import './Login.css'
 function Login() {
 
   return (
-   <div class="right">
-        <div class="right-content1">
-          <p class="right-content1-1">
+    <>
+   <div className="login-container-right">
+        <div className="right-content1">
+          <p className="right-content1-1">
             Welcome Back
             <img src={welcomehandIcon} alt="" width="50px" />
           </p>
-          <p class="right-content1-2">Login to continue to your account</p>
+          <p className="right-content1-2">Login to continue to your account</p>
         </div>
 
-        <form class="right-content2">
+        <form className="right-content2">
           <label>Email Address</label>
-          <div class="input">
+          <div className="input">
             <img src={mailIcon} alt="" width="25px" />
             <input type="email" placeholder="Enter your email" required />
           </div>
           <label>Password</label>
-          <div class="input">
+          <div className="input">
             <img src={passwordIcon} alt="" width="25px" />
             <input type="password" placeholder="Enter your password" required />
           </div>
@@ -35,13 +36,13 @@ function Login() {
 
         </form>
 
-        <div class="right-content3">
+        <div className="right-content3">
           <Link to="/signup" className='Link'>
             Don't have an account ? Click here
           </Link>
         </div>
       </div>
-  )
+ </> )
 }
 
 export default Login

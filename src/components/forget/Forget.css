@@ -1,4 +1,4 @@
-.right {
+/* .right {
       font-family: Arial, Helvetica, sans-serif;
       width: 25%;
       box-shadow: inset 0px 0px 05px 1px rgb(158, 158, 158);
@@ -6,7 +6,6 @@
       border-radius: 15px;
       display: flex;
       flex-direction: column;
-      /* align-items: center; */
       gap: 20px;
       padding: 20px 50px;
       margin-top: 70px;
@@ -43,7 +42,6 @@
       border-radius: 10px;
       box-shadow: 0px 0px 04px 0px black;
       background-color: white;
-      /* width: 70%; */
       padding: 10px;
     }
     .right-content2 input {
@@ -67,4 +65,214 @@
       background-color: #183770;
     }
    
-  
+   */
+
+
+
+
+
+
+
+   /* ========================= */
+/* FORGET PASSWORD CONTAINER */
+/* ========================= */
+
+.forget-container-right {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 25%;
+  background-color: white;
+  border: 2px solid #ffc1de;
+  box-shadow: 0px 0px 15px rgba(255, 105, 180, 0.2);
+  justify-self: center;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 25px 50px;
+  margin-top: 70px;
+  color: #c21875;
+}
+
+/* ========================= */
+/* TOP CONTENT */
+/* ========================= */
+
+.forget-content1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+gap: 10px;
+}
+
+.forget-content1-1 {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 700;
+  font-size: 28px;
+  color: #d81b80;
+  text-align: center;
+}
+
+.forget-content1-2 {
+  font-size: 18px;
+  color: #7a3a5c;
+  text-align: center;
+  margin-top: -5px;
+}
+
+/* ========================= */
+/* FORM */
+/* ========================= */
+
+.forget-content2 {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.forget-content2 label {
+  font-size: 17px;
+  font-weight: 600;
+  color: #b3126f;
+  margin-top: 8px;
+}
+
+/* ========================= */
+/* INPUT BOX */
+/* ========================= */
+
+.forget-content2 .forget-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 12px;
+  background-color: white;
+  border: 2px solid #ffc1de;
+  padding: 12px;
+  transition: 0.3s;
+}
+
+.forget-content2 .forget-input:hover {
+  border-color: #ff69b4;
+  box-shadow: 0px 0px 10px rgba(255, 105, 180, 0.3);
+}
+
+.forget-content2 input {
+  outline: none;
+  width: 100%;
+  background-color: white;
+  color: #7a3a5c;
+  font-size: 16px;
+  border: none;
+}
+
+.forget-content2 input::placeholder {
+  color: #c97ca6;
+}
+
+/* ========================= */
+/* BUTTON */
+/* ========================= */
+
+.forget-content2 .forget-btn {
+  background: linear-gradient(to right, #ff4fa3, #ff1493);
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+  margin-top: 10px;
+  box-shadow: 0px 5px 15px rgba(255, 20, 147, 0.3);
+}
+
+.forget-content2 .forget-btn:hover {
+  background: linear-gradient(to right, #ff1493, #d81b80);
+  transform: translateY(-2px);
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+/* 1280px to 1480px */
+
+@media screen and (min-width: 1280px) and (max-width: 1480px) {
+
+  .forget-container-right {
+    width: 35% !important;
+  }
+
+}
+
+/* 769px to 1279px */
+
+@media screen and (min-width: 769px) and (max-width: 1279px) {
+
+  .forget-container-right {
+    width: 60% !important;
+  }
+
+}
+
+/* 481px to 768px */
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+
+  .forget-container-right {
+    width: 80% !important;
+    padding: 20px 30px !important;
+  }
+
+  .forget-content1-1 {
+    font-size: 24px !important;
+  }
+
+  .forget-content1-2 {
+    font-size: 16px !important;
+  }
+
+}
+
+/* 300px to 480px */
+
+@media screen and (min-width: 300px) and (max-width: 480px) {
+
+  .forget-container-right {
+    width: 90% !important;
+    padding: 15px 20px !important;
+    margin-top: 30px !important;
+  }
+
+  .forget-content1-1 {
+    font-size: 22px !important;
+    text-align: center;
+  }
+
+  .forget-content1-1 img {
+    width: 35px !important;
+  }
+
+  .forget-content1-2 {
+    font-size: 14px !important;
+  }
+
+  .forget-content2 label {
+    font-size: 14px !important;
+  }
+
+  .forget-content2 input {
+    font-size: 14px !important;
+  }
+
+  .forget-content2 .forget-btn {
+    font-size: 18px !important;
+  }
+
+}

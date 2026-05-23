@@ -1,4 +1,4 @@
-.right {
+/* .right {
       font-family: Arial, Helvetica, sans-serif;
       width: 25%;
       box-shadow: inset 0px 0px 05px 1px rgb(158, 158, 158);
@@ -6,7 +6,6 @@
       border-radius: 15px;
       display: flex;
       flex-direction: column;
-      /* align-items: center; */
       gap: 20px;
       padding: 20px 50px;
       margin-top: 70px;
@@ -43,7 +42,6 @@
       border-radius: 10px;
       box-shadow: 0px 0px 04px 0px black;
       background-color: white;
-      /* width: 70%; */
       padding: 10px;
     }
     .right-content2 input {
@@ -67,4 +65,190 @@
     .right-content2 .btn:hover {
       background-color: #183770;
     }
-   
+    */
+
+
+
+
+ /* ========================= */
+/* OTP MAIN CONTAINER */
+/* ========================= */
+
+.pink-otp-container {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 25%;
+  background-color: white;
+  border: 2px solid #ffc1de;
+  box-shadow: 0px 0px 15px rgba(255, 105, 180, 0.2);
+  justify-self: center;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 25px 50px;
+  margin-top: 70px;
+  color: #c21875;
+}
+
+/* ========================= */
+/* TOP CONTENT */
+/* ========================= */
+
+.pink-otp-content1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.pink-otp-content1-title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 700;
+  font-size: 28px;
+  color: #d81b80;
+}
+
+.pink-otp-content1-subtitle {
+  font-size: 18px;
+  color: #7a3a5c;
+  text-align: center;
+  margin-top: -5px;
+}
+
+/* ========================= */
+/* FORM */
+/* ========================= */
+
+.pink-otp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pink-otp-form label {
+  font-size: 17px;
+  font-weight: 600;
+  color: #b3126f;
+  margin-top: 8px;
+}
+
+/* ========================= */
+/* INPUT BOX */
+/* ========================= */
+
+.pink-otp-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 12px;
+  background-color: white;
+  border: 2px solid #ffc1de;
+  padding: 12px;
+  transition: 0.3s;
+}
+
+.pink-otp-input:hover {
+  border-color: #ff69b4;
+  box-shadow: 0px 0px 10px rgba(255, 105, 180, 0.3);
+}
+
+.pink-otp-input input {
+  outline: none;
+  width: 100%;
+  background-color: white;
+  color: #7a3a5c;
+  font-size: 16px;
+  border: none;
+}
+
+.pink-otp-input input::placeholder {
+  color: #c97ca6;
+}
+
+/* ========================= */
+/* BUTTON */
+/* ========================= */
+
+.pink-otp-btn {
+  background: linear-gradient(to right, #ff4fa3, #ff1493);
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
+  margin-top: 10px;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  color: white;
+  font-size: 21px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+  box-shadow: 0px 5px 15px rgba(255, 20, 147, 0.3);
+}
+
+.pink-otp-btn:hover {
+  background: linear-gradient(to right, #ff1493, #d81b80);
+  transform: translateY(-2px);
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media screen and (min-width: 1280px) and (max-width: 1480px) {
+
+  .pink-otp-container {
+    width: 35% !important;
+  }
+
+}
+
+@media screen and (min-width: 769px) and (max-width: 1279px) {
+
+  .pink-otp-container {
+    width: 60% !important;
+  }
+
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+
+  .pink-otp-container {
+    width: 80% !important;
+    padding: 20px 30px !important;
+  }
+
+}
+
+@media screen and (min-width: 300px) and (max-width: 480px) {
+
+  .pink-otp-container {
+    width: 90% !important;
+    padding: 15px 20px !important;
+    margin-top: 30px !important;
+  }
+
+  .pink-otp-content1-title {
+    font-size: 22px !important;
+    text-align: center;
+  }
+
+  .pink-otp-content1-subtitle {
+    font-size: 14px !important;
+  }
+
+  .pink-otp-form label {
+    font-size: 14px !important;
+  }
+
+  .pink-otp-input input {
+    font-size: 14px !important;
+  }
+
+  .pink-otp-btn {
+    font-size: 18px !important;
+  }
+
+}
