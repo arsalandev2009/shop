@@ -1,138 +1,144 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { productsdata } from '../../data/index'
+import React from "react";
+import { Link } from "react-router-dom";
+import { productsdata } from "../../data/index";
+import { useState } from "react";
+function Homeroducts({ ids }) {
+  const [hover, setHover] = useState(false);
 
-function Homeroducts({ids}) {
-   let showProducts  ;
-   if(ids){
-   showProducts = productsdata.filter((item) => ids.includes(item.id));
-   }else{
-   showProducts = productsdata;
-   }
-  
+  let showProducts;
+  if (ids) {
+    showProducts = productsdata.filter((item) => ids.includes(item.id));
+  } else {
+    showProducts = productsdata;
+  }
+
   return (
     <div
       style={{
-        margin: '50px auto 50px 0px',
-        display: 'flex',
-        flexDirection: 'column',
-        // backgroundColor:"green",
-        width:"100%"
+        margin: "50px auto 50px 0px",
+        display: "flex",
+        flexDirection: "column",
+        width: "100%",
+        transform: hover ? "scale(1.05)" : "scale(1)",
       }}
     >
-
       <div
         id="items-container"
         style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          gap: '20px',
-          margin: '0px 0px 20px 0px',
-        // backgroundColor:"red",
-          padding: '20px',
-          width: '100%',
-          justifyContent: 'start',
-          boxSizing: 'border-box',
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "10px",
+          margin: "0px 0px 20px 0px",
+          padding: "0px 20px",
+          width: "100%",
+          justifyContent: "start",
+          boxSizing: "border-box",
         }}
       >
         {showProducts.map((item) => (
-          <Link
-          to={`/details/${item.id}`}
+          <div
+            onMouseEnter={(e) => e.currentTarget.style.transform="translateY(-5px)"}
+            onMouseLeave={(e) => e.currentTarget.style.transform="translateY(1px)"}
             key={item.id}
             style={{
-              width: '220px',
-              height: '300px',
-              borderRadius: '12px',
-              boxShadow: '0px 0px 8px rgba(0,0,0,0.15)',
-              display: 'flex',
-              flexDirection: 'column',
-              overflow: 'hidden',
-              backgroundColor: 'white',
-              cursor: 'pointer',
-              textDecoration: 'none',
-              color: 'black',
+              width: "200px",
+              height: "280px",
+              borderRadius: "10px",
+              boxShadow: "0px 0px 8px rgba(0,0,0,0.15)",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              overflow: "hidden",
+              backgroundColor: "white",
+              cursor: "pointer",
+              textDecoration: "none",
+              color: "black",
               flexShrink: 0,
-              transition: '0.3s',
+              transition: "0.3s",
             }}
           >
-            <div
+            <Link
+              to={`/details/${item.id}`}
               style={{
-                width: '100%',
-                height: '150px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                overflow: 'hidden',
-                padding: '0px',
-                boxSizing: 'border-box',
+                width: "100%",
+                height: "120px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                overflow: "hidden",
+                padding: "0px",
+                boxSizing: "border-box",
               }}
             >
               <img
                 src={item.image}
                 alt=""
-                width="100%"
                 style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'contain',
+                  width: "95%",
+                  height: "95%",
+                  objectFit: "contain",
                 }}
               />
-            </div>
+            </Link>
 
-            <div
+            <Link
+              to={`/details/${item.id}`}
               style={{
-                fontSize: '18px',
-                fontFamily: 'Arial, Helvetica, sans-serif',
-                fontWeight: 'bold',
-                textAlign: 'start',
-                padding: '15px 15px 5px 15px',
-                minHeight: '55px',
+                fontSize: "18px",
+                fontFamily: "Arial, Helvetica, sans-serif",
+                fontWeight: "bold",
+                textAlign: "start",
+                padding: "15px 15px 5px 15px",
+                textDecoration: "none",
+                color: "black",
               }}
             >
               <p>{item.name}</p>
-            </div>
+            </Link>
 
-            <div
+            <Link
+              to={`/details/${item.id}`}
               style={{
-                textAlign: 'start',
-                fontSize: '12px',
-                fontFamily: 'Arial, Helvetica, sans-serif',
-                color: '#555',
-                lineHeight: '20px',
-                padding: '0px 15px',
-                minHeight: '60px',
+                textAlign: "start",
+                fontSize: "12px",
+                fontFamily: "Arial, Helvetica, sans-serif",
+                color: "#555",
+                lineHeight: "15px",
+                padding: "0px 15px",
+                marginTop: "-10px",
+                textDecoration: "none",
               }}
             >
               <p>{item.desc}</p>
-            </div>
+            </Link>
 
             <div
               style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '10px',
-                padding: '10px 15px 15px 15px',
-                fontSize: '18px',
-                color: 'red',
-                fontFamily: 'Arial, Helvetica, sans-serif',
+                display: "flex",
+                alignItems: "center",
+                gap: "10px",
+                padding: "0px 15px 15px 15px",
+                fontSize: "18px",
+                color: "red",
+                fontFamily: "Arial, Helvetica, sans-serif",
               }}
             >
               <p>Rs: {item.saleprice}</p>
 
               <del
                 style={{
-                  color: 'gray',
-                  fontSize: '14px',
+                  color: "gray",
+                  fontSize: "14px",
                 }}
               >
                 <p>{item.price}</p>
               </del>
             </div>
-          </Link>
+          </div>
         ))}
       </div>
     </div>
-  )
+  );
 }
 
-export default Homeroducts
+export default Homeroducts;

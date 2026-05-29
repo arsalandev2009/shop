@@ -8,6 +8,7 @@
   z-index: 1000;
   background: #fff;
   box-shadow: 0 6px 20px rgba(255, 105, 180, 0.15);
+  /* height: 100px; */
   border-bottom: 1px solid #ffe0ef;
 }
 
@@ -45,6 +46,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px 50px;
+  /* height: 70px; */
 }
 
 /* LOGO */
@@ -55,15 +57,21 @@
 /* NAV */
 .pink-nav {
   display: flex;
-  gap: 30px;
-  list-style: none;
+  gap: 05px;
+  align-items: center;
+  border: 1px solid black;
+  padding: 0px 0px 0px 5px;
+  border-radius: 5px;
+  border-color: grey;
 }
-
-.pink-nav a {
-  text-decoration: none;
-  font-weight: 600;
-  color: #333;
+.pink-nav input {
+  width: fit-content;
+  border: none;
+  border-color: grey;
+  border-radius: 5px;
+  outline: none;
   font-size: 16px;
+  padding: 05px 02px 05px 05px;
 }
 
 /* ACTIONS */
@@ -74,43 +82,13 @@
 }
 
 /* SEARCH */
-.pink-search {
-  display: flex;
-  align-items: center;
-  border: 1px solid pink;
-  border-radius: 6px;
-  padding: 5px 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.pink-search input {
-  border: none;
-  outline: none;
-  padding: 8px;
-  background: transparent;
-}
 
 /* CART */
-.pink-cart {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #ff4fa3, #ff7ac3);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.pink-cart img {
-  width: 28px;
-}
 
 /* ACCOUNT */
 .pink-account-btn {
   width: 45px;
   height: 45px;
-  border-radius: 50%;
-  background: #ff3886;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -118,7 +96,7 @@
 }
 
 .pink-account-btn img {
-  width: 28px;
+  width: 30px;
 }
 
 /* DROPDOWN */
@@ -131,9 +109,9 @@
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   display: grid;
-  margin: 0px 50px;
+  margin: 0px 10px;
   gap: 10px;
   padding: 15px;
 }
@@ -153,82 +131,111 @@
 
 /* MOBILE */
 @media screen and (min-width: 300px) and (max-width: 480px) {
-    .pink-topbar p{
-        font-size: 12px;
-    }
+  .pink-topbar p {
+    font-size: 12px;
+  }
   .pink-header-main {
-    /* flex-direction: column; */
-    justify-content: space-around;
-    padding: 5px 10px 0px 0px;
+    justify-content: space-between;
+    padding: 5px 0px 0px 0px;
     gap: 10px;
   }
-.pink-logo{
+  .pink-logo {
     width: 20%;
-}
-  .pink-nav {
-    gap: 15px;
-    flex-wrap: wrap;
-    width: 60%;
-    font-size: 12px;
-    justify-content: center;
   }
-  .pink-nav li .pink-Link{
+  .pink-logo img {
+    width: 50px;
+  }
+  .pink-nav {
+    display: flex;
+    gap: 05px;
+    align-items: center;
+    border: 1px solid black;
+    padding: 0px 0px 0px 5px;
+    border-radius: 5px;
+    width: 50%;
+    border-color: grey;
+  }
+  .pink-nav input {
+    width: 100%;
+    border: none;
+    border-color: grey;
+    border-radius: 5px;
+    outline: none;
     font-size: 12px;
-
-  
-}
-  .pink-nav li .pink-Link-contact{
-
-display: none;  
-}
-
- 
-
+    padding: 05px 02px 05px 05px;
+  }
+  .pink-nav img {
+    width: 15px;
+  }
+  .pink-account-wrapper {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+  }
+  .pink-account-btn {
+    width: 0px;
+    height: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .pink-account-btn img {
+    width: 25px;
+  }
   .pink-actions {
-    width: 20%;
-
-    /* justify-content: space-between; */
+    width: 15%;
+  }
+  .pink-dropdown {
+    right: 0px;
+    width: 170px;
+    top: 80px;
+    padding: 10px 5px;
   }
 }
 
 /* SMALL TABLET */
 @media screen and (min-width: 481px) and (max-width: 768px) {
-  .pink-topbar p{
-        font-size: 12px;
-    }
+  .pink-topbar p {
+    font-size: 12px;
+  }
+  .pink-logo img {
+    width: 60px;
+  }
   .pink-header-main {
     /* flex-direction: column; */
     justify-content: space-around;
     padding: 5px 10px 0px 0px;
     gap: 10px;
   }
-.pink-logo{
-    width: 20%;
-}
-  .pink-nav {
-    gap: 15px;
-    flex-wrap: wrap;
-    width: 60%;
-    font-size: 12px;
+  .pink-account-wrapper {
+    width: 100%;
     justify-content: center;
+    display: flex;
+    /* background-color: #ff4fa3; */
   }
-  .pink-nav li .pink-Link{
-    font-size: 12px;
-
-  
-}
-  .pink-nav li .pink-Link-contact{
-
-    font-size: 12px;
-
-}
-
- 
-
-  .pink-actions {
+  .pink-logo {
     width: 20%;
-
-    /* justify-content: space-between; */
+  }
+  .pink-account-btn {
+    width: 0px;
+    height: 0px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    cursor: pointer;
+  }
+  .pink-account-btn img {
+    width: 25px;
+  }
+  .pink-actions {
+    width: 10%;
+  }
+  .pink-dropdown {
+    right: 0px;
+    width: 170px;
+    top: 90px;
+    padding: 10px 5px;
   }
 }
 
@@ -236,10 +243,6 @@ display: none;
 @media screen and (min-width: 769px) and (max-width: 1279px) {
   .pink-header-main {
     padding: 10px 25px;
-  }
-
-  .pink-nav {
-    gap: 20px;
   }
 }
 

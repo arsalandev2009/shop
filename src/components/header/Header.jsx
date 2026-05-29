@@ -374,17 +374,14 @@ function Header() {
         </div>
 
         {/* Nav */}
-        <ul className="pink-nav">
-          <li>
-            <Link to="/home" className="pink-Link">Home</Link>
-          </li>
-          <li>
-            <Link to="/products" className="pink-Link">All Products</Link>
-          </li>
-          <li>
-            <Link to="/contactus" className="pink-Link-contact">Contact Us</Link>
-          </li>
-        </ul>
+        <div className="pink-nav">
+
+  <img src={searchIcon} alt="" width="20px"/>
+         <input type="Search" placeholder="Search here" />
+
+
+  
+          </div>
 
         {/* Right Section */}
         <div className="pink-actions">
@@ -396,7 +393,7 @@ function Header() {
           {/* Account */}
           <div className="pink-account-wrapper">
             <div className="pink-account-btn" onClick={dropdown}>
-              <img src={menu} alt="menu" />
+              <img src={menu} alt="menu"  style={{transform: account ? 'rotate(90deg)' : 'rotate(0deg)'}}/>
             </div>
 
             {account && (

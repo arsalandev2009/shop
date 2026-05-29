@@ -271,6 +271,9 @@ import dropdown from '../../assets/dropdown.png'
 import searchIcon from '../../assets/searchicon.png'
 import Categories from '../category/Categories'
 import Products from '../products/Productscard'
+import Header from '../header/Header'
+import Footer from '../footer/Footer'
+import Dealscard from '../deals/Dealscard'
 import './Home.css'
 
 function Home() {
@@ -290,13 +293,11 @@ function Home() {
 
   return (
 
-    <div className="home-main-container">
+    
+    <div className='home-container'>
+      <Header />
 
-      {/* ========================= */}
-      {/* CATEGORY DROPDOWN */}
-      {/* ========================= */}
-
-      <div className="home-category-wrapper">
+       {/* <div className="home-category-wrapper">
 
         <button
           onClick={toggle}
@@ -323,8 +324,7 @@ function Home() {
 
         </button>
 
-        {
-          hideandshow && (
+        {hideandshow && (
 
             <div className="home-category-dropdown">
 
@@ -343,11 +343,7 @@ function Home() {
           )
         }
 
-      </div>
-
-      {/* ========================= */}
-      {/* MAIN CONTENT */}
-      {/* ========================= */}
+      </div>  */}
 
       <div className="home-content-wrapper">
 
@@ -356,13 +352,32 @@ function Home() {
         <div className="home-hotitems-section">
 
           <p className="home-heading">
-            Hot Items
+            Trending Items
           </p>
 
-          <Products ids={[9, 10, 15, 20]} />
+          <Products ids={[9, 10, 15, 20, 1, 5, 2]} />
 
           <Link
             to="/products"
+            className="home-seemore-btn"
+          >
+            See More
+          </Link>
+
+        </div>
+
+{/* Deals */}
+
+   <div className="home-hotitems-section home-deals-section">
+
+          <p className="home-heading">
+            Hot Deals
+          </p>
+
+          <Dealscard ids={[9,1,5,3,7,4]}/>
+
+          <Link
+            to="/deals"
             className="home-seemore-btn"
           >
             See More
@@ -384,13 +399,7 @@ function Home() {
 
       </div>
 
-
-<div className="home-search-wrapper">
-  <img src={searchIcon} alt=""  width="15px"/>
-  <input type="search" placeholder='Search here'/>
-</div>
-
-
+        <Footer/>
     </div>
 
   )

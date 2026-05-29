@@ -227,58 +227,166 @@ export const productsdata = [
   },
 ];
 
-export const categoriesdata =[
+export const categoriesdata = [
+  {
+    id: 0,
+    name: "Face Wash",
+    desc: "Clean and refresh your skin daily",
+    image: facewash1,
+  },
   {
     id: 1,
-desc:"lorem arsalan shabbir",
-    name: "Face Wash",
-    image: facewash5
+    name: "Skin Care",
+    desc: "Healthy and glowing skincare products",
+      image: facewash2,
+
   },
   {
     id: 2,
-    name: "Skin Care",
-    desc:"lorem arsalan shabbir",
-    image: facewash2
+    name: "Hair Care",
+    desc: "Products for strong and shiny hair",
+       image: facewash6,
 
   },
-   {
+  {
     id: 3,
-desc:"lorem arsalan shabbir",
-    name: "Face Wash",
-    image: facewash6
+    name: "Makeup",
+    desc: "Beauty and makeup essentials",
+    image: facewash3,
+
   },
   {
     id: 4,
-    name: "Skin Care",
-    desc:"lorem arsalan shabbir",
-    image: facewash2
+    name: "Body Care",
+    desc: "Soft and smooth body care products",
+      image: facewash2,
 
   },
-    {
+  {
     id: 5,
-desc:"lorem arsalan shabbir",
-    name: "Face Wash",
-    image: facewash4
+    name: "Perfumes",
+    desc: "Long lasting and fresh fragrances",
+       image: facewash4,
+
   },
   {
     id: 6,
-    name: "Skin Care",
-    desc:"lorem arsalan shabbir",
-    image: facewash2
+    name: "Lip Care",
+    desc: "Care products for soft lips",
+       image: facewash5,
 
+  }
+
+];
+export const dealsdata =[
+ {
+    id: 0,
+    name: "Pond's Bright Beauty Face Wash",
+    desc: "Brightening pink face wash for glowing skin.",
+    fulldesc:
+      "Pond's Bright Beauty Face Wash is specially designed to remove dirt, excess oil, and daily impurities while helping the skin look naturally brighter and fresher. Its creamy formula deeply cleanses pores without drying the skin and leaves the face soft, smooth, and refreshed after every wash. Regular use supports healthy glowing skin and improves overall skin freshness throughout the day.",
+    price: 950,
+    saleprice: 799,
+    image: facewash1,
   },
-   {
+
+  {
+    id: 1,
+    name: "Himalaya Neem Face Wash",
+    desc: "Neem cleanser for acne and oily skin.",
+    fulldesc:
+      "Himalaya Neem Face Wash contains the goodness of neem and natural ingredients that help fight acne-causing bacteria while controlling excess oil. It deeply cleanses the skin, removes impurities from pores, and keeps the face feeling fresh and clean for longer hours. Its gentle formula is suitable for daily use and helps maintain naturally healthy-looking skin.",
+    price: 850,
+    saleprice: 699,
+    image: facewash2,
+  },
+
+  {
+    id: 2,
+    name: "Pond's Men Pollution Out",
+    desc: "Charcoal face wash for deep cleansing.",
+    fulldesc:
+      "Pond's Men Pollution Out Face Wash uses activated charcoal technology to remove pollution, dirt, and oil from deep inside the pores. It provides a refreshing cleansing experience that helps the skin feel energized and cleaner after every wash. The advanced formula is perfect for men exposed to dust and pollution throughout the day and supports healthier-looking skin.",
+    price: 1100,
+    saleprice: 899,
+    image: facewash3,
+  },
+
+  {
+    id: 3,
+    name: "Nivea Men Oil Control",
+    desc: "Oil control cleanser for men.",
+    fulldesc:
+      "Nivea Men Oil Control Face Wash is specially developed to reduce excess oil and control unwanted shine while deeply cleansing the skin. It refreshes tired skin, unclogs pores, and helps maintain a smooth and clean appearance throughout the day. The lightweight formula gives a cool fresh feeling and is ideal for daily skincare routines.",
+    price: 1200,
+    saleprice: 999,
+    image: facewash4,
+  },
+
+  {
+    id: 4,
+    name: "Golden Pearl Herbal",
+    desc: "Herbal face wash for soft skin.",
+    fulldesc:
+      "Golden Pearl Herbal Face Wash gently removes dirt and impurities while keeping the skin soft, fresh, and naturally glowing. Its herbal ingredients help nourish the skin without causing dryness and leave a smooth refreshed feel after every use. The mild cleansing formula is suitable for everyday skincare and supports healthier-looking skin.",
+    price: 700,
+    saleprice: 550,
+    image: facewash5,
+  },
+
+  {
+    id: 5,
+    name: "MEC Vitamin C Face Wash",
+    desc: "Vitamin C cleanser for bright skin.",
+    fulldesc:
+      "MEC Vitamin C Face Wash is enriched with vitamin C to refresh dull and tired skin while supporting a brighter natural glow. It deeply cleanses the pores, removes excess oil, and helps improve skin freshness without making the skin feel dry. Regular use leaves the face looking healthier, smoother, and more radiant every day.",
+    price: 900,
+    saleprice: 750,
+    image: facewash6,
+  },
+
+  {
+    id: 6,
+    name: "Pond's Pure White Face Wash",
+    desc: "Brightening face cleanser.",
+    fulldesc:
+      "Pond's Pure White Face Wash effectively removes dirt, pollution, and impurities from deep inside the pores while helping the skin appear cleaner and brighter. Its rich cleansing formula refreshes the skin instantly and gives a soft smooth feel after washing. Daily use helps maintain a naturally fresh and healthy-looking appearance.",
+    price: 980,
+    saleprice: 820,
+    image: facewash1,
+  },
+
+  {
     id: 7,
-desc:"lorem arsalan shabbir",
-    name: "Face Wash",
-    image: facewash1
+    name: "Himalaya Lemon Face Wash",
+    desc: "Lemon cleanser for oily skin.",
+    fulldesc:
+      "Himalaya Lemon Face Wash contains refreshing lemon extracts that help remove excess oil and deeply cleanse oily skin. The gentle formula refreshes tired skin instantly while reducing stickiness and leaving the face cool and clean. It is ideal for daily use and helps maintain a naturally fresh and healthy glow.",
+    price: 870,
+    saleprice: 720,
+    image: facewash2,
   },
+
   {
     id: 8,
-    name: "Skin Care",
-    desc:"lorem arsalan shabbir",
-    image: facewash2
+    name: "Pond's Men Energy Charge",
+    desc: "Cooling face wash for men.",
+    fulldesc:
+      "Pond's Men Energy Charge Face Wash provides a powerful cooling effect while removing dirt, sweat, and oil from the skin. Its refreshing formula helps awaken tired skin and leaves the face feeling energized and fresh throughout the day. Perfect for men who want a quick refreshing skincare solution after long busy hours.",
+    price: 1150,
+    saleprice: 950,
+    image: facewash3,
+  },
 
+  {
+    id: 9,
+    name: "Nivea Men Deep Clean",
+    desc: "Deep cleansing face wash.",
+    fulldesc:
+      "Nivea Men Deep Clean Face Wash deeply cleans pores and removes excess oil, pollution, and dirt from the skin effectively. Its refreshing formula helps maintain a clean and energized appearance while improving skin freshness after every wash. Daily use supports smoother healthier-looking skin with long-lasting freshness.",
+    price: 1300,
+    saleprice: 1099,
+    image: facewash4,
   }
 ];
 

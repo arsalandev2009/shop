@@ -25,13 +25,11 @@ function App() {
   
 
 <Routes>
-  <Route path='/' element={<Login />} />
-  <Route path='/login' element={<Login />} />
+  <Route path='/' element={<Home />} />
+  {/* <Route path='/login' element={<Login />} /> */}
   <Route path='/forget' element={<Forget />} />
   <Route path='/signup' element={<Signup />} />
-  <Route path='/home' element={<> 
-                                  <Header/> <Home /> <Footer /> 
-                               </>} />
+  <Route path='/home' element={<Home /> } />
   <Route path='/otp' element={<Otp />} />
   <Route path='/setnewpassword' element={<Setnewpassword />} />
   <Route path="/products" element={<Allproducts/>}/>
