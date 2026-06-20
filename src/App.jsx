@@ -14,6 +14,7 @@ import Details from './components/details/Details'
 import Youraccount from './components/youraccount/Youraccount'
 import Cart from './components/cart/Cart'
 import ProtectedRoute from './protect/ProtectedRoute'
+import Error from './components/error/Error'
 
 
 
@@ -40,6 +41,9 @@ function App() {
   <Route path='/you' element={<Youraccount/>}/>
   <Route path='/contactus' element={<Contactus />}/>
   <Route path='/cart' element={<ProtectedRoute> <Cart/> </ProtectedRoute>} />
+
+<Route path='*' element={<Error/>}/>
+
   </Routes>
 
 </BrowserRouter>
