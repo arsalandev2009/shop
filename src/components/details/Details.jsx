@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { productsdata } from "../../data/index";
 import { Link } from "react-router-dom";
 import Header from "../header/Header";
@@ -9,7 +9,7 @@ import wishlist from "../../assets/wishlist.png";
 import share from "../../assets/share.png";
 function Details() {
   const { id } = useParams();
-
+  const navigate = useNavigate()
   const singleProduct = productsdata[id];
 
   return (
@@ -101,6 +101,7 @@ function Details() {
                   border: "none",
                   borderRadius: "10px",
                 }}
+                onClick={()=>navigate('/cart')}
               >
                 Add to cart{" "}
               </button>

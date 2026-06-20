@@ -2,8 +2,45 @@ import React from 'react'
 import { dealsdata } from '../../data/index'
 import { Link, useParams } from 'react-router-dom'
 import { useState } from 'react';
-// import './Dealscard.css'
+import heartIcon from '../../assets/wishlist.png'
+import heartFilled from '../../assets/filled-wishlist.png'
+
 function Dealscard({ids}) {
+
+const [wishlist, setWishlist] = useState([]);
+const change = (item) => {
+let wishlist=JSON.parse(localStorage.getItem("wishlist"))||[];
+let exists = wishlist.find((product)=>product.id === item.id);
+if(exists){
+  wishlist= wishlist.filter((product)=>product.id !== item.id);
+} else{
+  wishlist.push(item);
+}
+  localStorage.setItem("wishlist",JSON.stringify(wishlist));
+
+setWishlist(wishlist.map(product=>product.id))
+}
+
+
+
+// const [wishlist, setWishlist] = useState([]);
+
+// const change = (item) => {
+//   let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+//   const exists = wishlist.find((product) => product.id === item.id);
+
+//   if (exists) {
+//     wishlist = wishlist.filter((product) => product.id !== item.id);
+//   } else {
+//     wishlist.push(item);
+//   }
+
+//   localStorage.setItem("wishlist",JSON.stringify(wishlist));
+
+//   setWishlist(wishlist.map(product => product.id));
+// };
+
 
   const [hover,setHover]=useState(false);
 
@@ -39,11 +76,11 @@ function Dealscard({ids}) {
          }}
        >
          {dealsdataselect.map((item) => (
-           <Link 
+           <div
                         
            onMouseEnter={(e) => e.currentTarget.style.transform="translateY(-5px)"}
            onMouseLeave={(e)=>e.currentTarget.style.transform="translateY(0px)"}
-           to={`/details/${item.id}`}
+           
              key={item.id}
              style={{
                width: '200px',
@@ -62,7 +99,11 @@ function Dealscard({ids}) {
                transition: '0.3s',
              }}
            >
-             <div
+            <button style={{position:'absolute',display:'flex', alignSelf:'end', margin:'10px', background:'none', border:'none'}}>
+              <img     src={wishlist.includes(item.id) ? heartFilled : heartIcon}
+    onClick={() => change(item)} alt=""  width="20px"/>
+            </button>
+             <Link to={`/details/${item.id}`}
                style={{
                  width: '100%',
                  height: '120px',
@@ -84,23 +125,27 @@ function Dealscard({ids}) {
                    objectFit: 'contain',
                  }}
                />
-             </div>
+             </Link>
  
-             <div
+             <Link to={`/details/${item.id}`}
                style={{
                  fontSize: '18px',
                  fontFamily: 'Arial, Helvetica, sans-serif',
                  fontWeight: 'bold',
+                 color:'black',
+                 textDecoration:'none',
                  textAlign: 'start',
                  padding: '15px 15px 5px 15px',
                  
                }}
              >
                <p>{item.name}</p>
-             </div>
+             </Link>
  
-             <div
+             <Link to={`/details/${item.id}`}
                style={{
+                color:'black',
+                 textDecoration:'none',
                  textAlign: 'start',
                  fontSize: '12px',
                  fontFamily: 'Arial, Helvetica, sans-serif',
@@ -113,7 +158,7 @@ function Dealscard({ids}) {
                }}
              >
                <p>{item.desc}</p>
-             </div>
+             </Link>
  
              <div
                style={{
@@ -137,7 +182,7 @@ function Dealscard({ids}) {
                  <p>{item.price}</p>
                </del>
              </div>
-           </Link>
+           </div>
          ))}
        </div>
      </div>

@@ -12,6 +12,8 @@ import Allproducts from './components/allproducts/Allproducts'
 import Home from './components/home/Home'
 import Details from './components/details/Details'
 import Youraccount from './components/youraccount/Youraccount'
+import Cart from './components/cart/Cart'
+import ProtectedRoute from './protect/ProtectedRoute'
 
 
 
@@ -25,17 +27,19 @@ function App() {
   
 
 <Routes>
-  <Route path='/' element={<Home />} />
   {/* <Route path='/login' element={<Login />} /> */}
+  <Route path='/' element={  <Home/> } />
   <Route path='/forget' element={<Forget />} />
   <Route path='/signup' element={<Signup />} />
-  <Route path='/home' element={<Home /> } />
+  <Route path='/login' element={<Login />} />
+  <Route path='/home' element={<Home/>} />
   <Route path='/otp' element={<Otp />} />
   <Route path='/setnewpassword' element={<Setnewpassword />} />
   <Route path="/products" element={<Allproducts/>}/>
   <Route path="/details/:id" element={<Details />}/>
   <Route path='/you' element={<Youraccount/>}/>
   <Route path='/contactus' element={<Contactus />}/>
+  <Route path='/cart' element={<ProtectedRoute> <Cart/> </ProtectedRoute>} />
   </Routes>
 
 </BrowserRouter>

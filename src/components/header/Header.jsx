@@ -324,7 +324,7 @@
 
 // export default Header
 
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import logo from "../../assets/logo.png";
@@ -339,6 +339,23 @@ import checkout from "../../assets/checkout.png";
 import "./Header.css";
 
 function Header() {
+
+  const[haswishlist,setHaswishlist]=useState(false)
+
+    useEffect(() => {
+      const savedWishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+if (savedWishlist.length>0) {
+  setHaswishlist(false)
+  
+}else{
+  setHaswishlist(true)
+
+}
+    }, []);
+
+
+
+
   const [account, setAccount] = useState(false);
   const [hide, setHide] = useState(true);
 
@@ -392,7 +409,9 @@ function Header() {
 
           {/* Account */}
           <div className="pink-account-wrapper">
-            <div className="pink-account-btn" onClick={dropdown}>
+            <div className="pink-account-btn" onClick={dropdown} style={{display:'flex',alignSelf:'center',justifySelf:'end', position:'absolute'}}>
+                <div style={{position:'absolute',backgroundColor:haswishlist ? 'none':'red', width:'10px',height:'10px',zIndex:'999',top:'0',left:'0',borderRadius:'50%'}}></div>
+
               <img src={menu} alt="menu"  style={{transform: account ? 'rotate(90deg)' : 'rotate(0deg)'}}/>
             </div>
 
@@ -409,8 +428,9 @@ function Header() {
                 <Link to="/myorder">
                   <img src={checkout} width="20px"/> My Orders
                 </Link>
-                <Link to="/cart">
-                  <img src={shoppingCart} alt="cart" width="20px"/> My Cart
+                <Link to="/cart" style={{display:'flex',flexDirection:'column',alignItems:'start',position:'relative'}}>
+                <div style={{position:'absolute',backgroundColor:haswishlist? 'none':'red', width:'10px',height:'10px',borderRadius:'50%'}}></div>
+                 <p style={{display:'flex',alignItems:'center',gap:'10px'}}> <img src={shoppingCart} alt="cart" width="20px"/> My Cart</p>
                 </Link>
                 <Link to="/">
                   <img src={logout} width="20px"/> Logout
